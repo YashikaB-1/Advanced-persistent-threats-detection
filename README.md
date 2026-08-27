@@ -8,8 +8,7 @@ Trains an Isolation Forest (unsupervised) and an XGBoost classifier (supervised)
 the CIC-IDS2017 dataset, then fuses their scores into a single risk value and streams
 it through a real-time monitoring simulation with latency and drift tracking.
 
-
-/div>
+</div>
 
 ---
 
