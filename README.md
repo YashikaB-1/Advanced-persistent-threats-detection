@@ -218,7 +218,4 @@ dashboard) and `/start` (returns the first 100 scored records as JSON).
 
 ## License
 
-No license file is included yet. Add one (e.g. [MIT](https://choosealicense.com/licenses/mit/))
-before publishing if you want the code reused.
-
 CIC-IDS2017 is distributed by the Canadian Institute for Cybersecurity, University of New Brunswick.
