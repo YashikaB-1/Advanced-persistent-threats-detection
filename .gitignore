@@ -1,0 +1,35 @@
+# ─── Dataset (CIC-IDS2017 — download separately, see data/README.md) ──
+data/*.csv
+data/MachineLearningCVE/
+!data/README.md
+
+# ─── Runtime output ─────────────────────────────────────────────────
+logs.txt
+*.log
+
+# ─── Python ─────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+ENV/
+*.egg-info/
+.eggs/
+build/
+dist/
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+
+# ─── Editors / tooling / OS ─────────────────────────────────────────
+.vscode/
+.idea/
+.zencoder/
+.zenflow/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini

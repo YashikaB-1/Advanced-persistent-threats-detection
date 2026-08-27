@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>APT Cyber Defense System</title>
+
+    <style>
+        body {
+            background: black;
+            color: #00ffcc;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+        }
+
+        h1 {
+            text-shadow: 0 0 10px #00ffcc;
+        }
+
+        button {
+            background: black;
+            color: #00ffcc;
+            border: 2px solid #00ffcc;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background: #00ffcc;
+            color: black;
+        }
+
+        table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #00ffcc;
+        }
+
+        .HIGH {
+            background: rgba(255, 0, 0, 0.8);
+            color: white;
+            animation: blink 0.5s infinite;
+        }
+
+        .MEDIUM {
+            background: orange;
+            color: black;
+        }
+
+        .NORMAL {
+            background: rgba(0,255,0,0.2);
+        }
+
+        @keyframes blink {
+            50% { opacity: 0.3; }
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>⚡ CYBER APT DETECTION SYSTEM ⚡</h1>
+
+<button onclick="startStream()">▶ START MONITORING</button>
+
+<table id="table">
+    <tr>
+        <th>TIME</th>
+        <th>RISK SCORE</th>
+        <th>STATUS</th>
+    </tr>
+</table>
+
+<script>
+function startStream() {
+    const eventSource = new EventSource("/stream");
+    const table = document.getElementById("table");
+
+    eventSource.onmessage = function(event) {
+        const data = JSON.parse(event.data);
+
+        let row = table.insertRow(1);
+        row.className = data.status;
+
+        row.insertCell(0).innerText = data.time;
+        row.insertCell(1).innerText = data.score;
+        row.insertCell(2).innerText = data.status;
+    };
+}
+</script>
+
+</body>
+</html>
